@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Weather from './components/weather';
 import Forecast from './components/forecast';
 import './App.css';
+import './assets/icons/css/weather-icons.min.css';
 
 function App() {
   const [weatherData, setWeatherData] = useState();
@@ -9,8 +10,6 @@ function App() {
   const [error, setError] = useState(null);
 
   const OPEN_WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5';
-  const OPEN_WEATHER_ICON_URL = 'https://openweathermap.org/img/w';
-
 
   useEffect(() => {
     getWeatherAndForecast()
@@ -23,14 +22,14 @@ function App() {
           tempMin: Math.round(response.daily[0].temp.min),
           tempMax: Math.round(response.daily[0].temp.max),
           wind: Math.round(( (response.current.wind_speed * 3.6) + Number.EPSILON) * 100) / 100,
-          icon: `${OPEN_WEATHER_ICON_URL}/${response.current.weather[0].icon}.png`
+          icon: 'wi wi-owm-' + response.current.weather[0].id
         },
         forecast: response.daily.map(function(day){
           return {
             tempMin: Math.round(day.temp.min),
             tempMax: Math.round(day.temp.max),
             wind: Math.round(( (day.wind_speed * 3.6) + Number.EPSILON) * 100) / 100,
-            icon: `${OPEN_WEATHER_ICON_URL}/${day.weather[0].icon}.png`
+            icon: 'wi wi-owm-' + day.weather[0].id
           };
         })
       }

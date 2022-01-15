@@ -7,7 +7,7 @@ export default function weather({weatherData}) {
         <p className="location">{weatherData.location}</p>
       </div>
       <div className="row">
-        <img src={weatherData.icon}></img>
+        <i className={weatherData.icon}></i>
         <div className="actualTemp">{weatherData.temp} &deg;C</div>
         <div className="minAndMaxTemp">
           <div className="minTemp">{weatherData.tempMin} &deg;C</div>
