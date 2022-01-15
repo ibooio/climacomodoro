@@ -4,10 +4,12 @@ import ForecastDay from './forecast-day';
 export default function forecastDay({day}) {
   return (
     <div className="forecast">
+      {/*{day.wind} km/h*/}
       <img src={day.icon}></img>
-      {day.tempMin} &deg;C
-      {day.tempMax} &deg;C
-      {day.wind} km/h
+      <div className="minAndMaxTemp">
+        <div className="minTemp">{day.tempMin} &deg;C</div>
+        <div className="maxTemp">{day.tempMax} &deg;C</div>
+      </div>
     </div>
   )
 }

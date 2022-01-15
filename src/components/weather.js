@@ -8,8 +8,12 @@ export default function weather({weatherData}) {
       </div>
       <div className="row">
         <img src={weatherData.icon}></img>
-        <p className="temp">{weatherData.temp} &deg;C</p>
-        <p className="wind">{weatherData.wind} km/h</p>
+        <div className="actualTemp">{weatherData.temp} &deg;C</div>
+        <div className="minAndMaxTemp">
+          <div className="minTemp">{weatherData.tempMin} &deg;C</div>
+          <div className="maxTemp">{weatherData.tempMax} &deg;C</div>
+        </div>
+        {/* <p className="wind">{weatherData.wind} km/h</p> */ }
       </div>    
   </div>
   )
