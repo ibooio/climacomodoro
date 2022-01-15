@@ -33,17 +33,18 @@ function App() {
     if( !forecastData){
       getForecast()
       .then(response => {
-        
-        const data = response.list.map(function(day){
+        console.log(response);
+        const data = response.daily.map(function(day){
           return {
-            tempMin: Math.round(day.main.temp_min),
-            tempMax: Math.round(day.main.temp_max),
-            wind: Math.round(( (day.wind.speed * 3.6) + Number.EPSILON) * 100) / 100,
+            tempMin: Math.round(day.temp.min),
+            tempMax: Math.round(day.temp.max),
+            wind: Math.round(( (day.wind_speed * 3.6) + Number.EPSILON) * 100) / 100,
             icon: `${OPEN_WEATHER_ICON_URL}/${day.weather[0].icon}.png`
           };
         });
 
         console.log(data);
+        console.log('ENTRA');
 
         setForecastData(data);
         setError(null);
@@ -56,12 +57,12 @@ function App() {
   }, [error])
 
   function getWeather() {
-    return fetch(`${OPEN_WEATHER_API_URL}/weather?id=3860443&units=metric&lang=es&APPID=${process.env.REACT_APP_API_KEY}`)
+    return fetch(`${OPEN_WEATHER_API_URL}/weather?lat=-45.8667&lon=-67.5&units=metric&lang=es&APPID=${process.env.REACT_APP_API_KEY}`)
     .then(response => response.json());
   }
 
   function getForecast(){
-    return fetch(`${OPEN_WEATHER_API_URL}/forecast?id=3860443&units=metric&lang=es&cnt=16&APPID=${process.env.REACT_APP_API_KEY}`)
+    return fetch(`${OPEN_WEATHER_API_URL}/onecall?lat=-45.8667&lon=-67.5&units=metric&lang=es&cnt=16&APPID=${process.env.REACT_APP_API_KEY}`)
     .then(response => response.json());
   }
 
