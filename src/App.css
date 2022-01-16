@@ -1,0 +1,44 @@
+
+.weather{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.weather .location{
+
+}
+
+.weather i{
+  font-size: 4em;
+}
+
+.weather .data > .actualTemp{
+  font-size: 4em;
+}
+
+.minAndMaxTemp >.minTemp, 
+.minAndMaxTemp > .maxTemp{
+  display: inline-block;
+  padding: 5px;
+}
+
+.minAndMaxTemp >.minTemp > span, 
+.minAndMaxTemp > .maxTemp > span{
+  font-size: .7em;
+}
+
+.forecast{
+  text-align: center;
+}
+
+.forecastDay{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #333;
+  border-radius: 10px;
+}
+
+.forecastDay i{
+  font-size: 2em;
+}
