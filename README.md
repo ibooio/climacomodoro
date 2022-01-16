@@ -2,4 +2,7 @@
 2) Dentro del archivo .env setear REACT_APP_API_KEY con el valor de la api key obtenida en https://openweathermap.org/
 3) Dentro del directorio ejecutar npm start
 
+TODO
+Añadir nombre del día al pronóstico
+
 ![demo](doc/demo.png)
