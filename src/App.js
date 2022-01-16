@@ -56,8 +56,8 @@ function App() {
           <Forecast forecastData={forecastData}/>
         </div>
       ): (
-        <div>
-          Cargando...
+        <div className="loading">
+          Obteniendo información...
         </div>
       )}
     </div>

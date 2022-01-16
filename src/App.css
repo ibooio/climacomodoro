@@ -1,11 +1,16 @@
+body{
+  background-color: #8f21f3;
+  color: #eee;
+}
+
+.loading{
+  margin-top: 25%;
+  text-align: center;
+}
 
 .weather{
   margin: 0 auto;
   text-align: center;
-}
-
-.weather .location{
-
 }
 
 .weather i{
@@ -29,16 +34,17 @@
 
 .forecast{
   text-align: center;
+  margin-top: 30px;
 }
 
 .forecastDay{
   display: inline-block;
-  padding: 10px;
+  padding: 30px 10px;
   margin: 10px;
-  border: 1px solid #333;
+  border: 1px solid #783d83;
   border-radius: 10px;
 }
 
 .forecastDay i{
-  font-size: 2em;
+  font-size: 3em;
 }
